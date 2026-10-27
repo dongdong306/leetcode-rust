@@ -1,8 +1,12 @@
 use leetcode_rust::Solution;
 
 fn main() {
-    let res = Solution::read_binary_watch(4);
-    for r in res {
-        println!("{:?}", r);
-    }
+    let board = vec![
+        vec!['A', 'B'],
+        vec!['C', 'D'],
+    ];
+
+    let res = Solution::exist(board.clone(), "DBAC".to_string());
+    println!(" -> {}", res);
+
 }
