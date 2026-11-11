@@ -64,6 +64,7 @@ impl Solution {
             (500, "D"),
             (400, "CD"),
             (100, "C"),
+            (90, "XC"),
             (50, "L"),
             (40, "XL"),
             (10, "X"),
@@ -86,5 +87,35 @@ impl Solution {
         }
 
         return result;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert_eq!(Solution::int_to_roman(3), "III");
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert_eq!(Solution::int_to_roman(4), "IV");
+    }
+
+    #[test]
+    fn test_example_3() {
+        assert_eq!(Solution::int_to_roman(9), "IX");
+    }
+
+    #[test]
+    fn test_example_4() {
+        assert_eq!(Solution::int_to_roman(58), "LVIII");
+    }
+
+    #[test]
+    fn test_example_5() {
+        assert_eq!(Solution::int_to_roman(1994), "MCMXCIV");
     }
 }

@@ -47,3 +47,18 @@ impl Solution {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert_eq!(Solution::smallest_number(10, 2), 10);
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert_eq!(Solution::smallest_number(15, 3), 16);
+    }
+}

@@ -11,7 +11,7 @@
 //! ## 判题标准
 //!
 //! 系统会用下面的代码来测试你的题解:
-//! ```
+//! ```text
 //! int[] nums = [...]; // 输入数组
 //! int[] expectedNums = [...]; // 长度正确的期望答案
 //!
@@ -56,6 +56,27 @@ impl Solution {
         }
 
         return nums.len() as i32;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        let mut nums = vec![1, 1, 2];
+        let k = Solution::remove_duplicates(&mut nums);
+        assert_eq!(k, 2);
+        assert_eq!(&nums[..k as usize], &[1, 2]);
+    }
+
+    #[test]
+    fn test_example_2() {
+        let mut nums = vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+        let k = Solution::remove_duplicates(&mut nums);
+        assert_eq!(k, 5);
+        assert_eq!(&nums[..k as usize], &[0, 1, 2, 3, 4]);
     }
 }
 

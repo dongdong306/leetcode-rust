@@ -34,7 +34,7 @@ impl Solution {
             let mut flag = false;
             let mut stack: Vec<(usize, usize)> = Vec::new();
             let mut k = 0;
-            if board[i][j] != 'O' {
+            if board[i][j] == 'O' {
                 stack.push((i, j));
             }
 
@@ -71,5 +71,37 @@ impl Solution {
                 }
             }
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        let mut board = vec![
+            vec!['X', 'X', 'X', 'X'],
+            vec!['X', 'O', 'O', 'X'],
+            vec!['X', 'X', 'O', 'X'],
+            vec!['X', 'O', 'X', 'X'],
+        ];
+        Solution::solve(&mut board);
+        assert_eq!(
+            board,
+            vec![
+                vec!['X', 'X', 'X', 'X'],
+                vec!['X', 'X', 'X', 'X'],
+                vec!['X', 'X', 'X', 'X'],
+                vec!['X', 'O', 'X', 'X'],
+            ]
+        );
+    }
+
+    #[test]
+    fn test_example_2() {
+        let mut board = vec![vec!['X']];
+        Solution::solve(&mut board);
+        assert_eq!(board, vec![vec!['X']]);
     }
 }

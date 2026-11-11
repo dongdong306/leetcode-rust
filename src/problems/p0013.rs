@@ -73,7 +73,7 @@ impl Solution {
         for c in s.chars().rev() {
             match map.get(&c) {
                 Some(n) => {
-                    if *n > last {
+                    if *n >= last {
                         result += n;
                     } else {
                         result -= n;
@@ -85,5 +85,35 @@ impl Solution {
         }
 
         return result;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert_eq!(Solution::roman_to_int("III".to_string()), 3);
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert_eq!(Solution::roman_to_int("IV".to_string()), 4);
+    }
+
+    #[test]
+    fn test_example_3() {
+        assert_eq!(Solution::roman_to_int("IX".to_string()), 9);
+    }
+
+    #[test]
+    fn test_example_4() {
+        assert_eq!(Solution::roman_to_int("LVIII".to_string()), 58);
+    }
+
+    #[test]
+    fn test_example_5() {
+        assert_eq!(Solution::roman_to_int("MCMXCIV".to_string()), 1994);
     }
 }

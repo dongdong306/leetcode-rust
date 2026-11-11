@@ -13,7 +13,7 @@
 //! 请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。
 //!
 //! 你可以想象内部操作如下:
-//! ```
+//! ```text
 //! // nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
 //! int len = removeDuplicates(nums);
 //!
@@ -57,5 +57,26 @@ impl Solution {
         }
 
         return nums.len() as i32;
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        let mut nums = vec![1, 1, 1, 2, 2, 3];
+        let k = Solution::remove_duplicates_ii(&mut nums);
+        assert_eq!(k, 5);
+        assert_eq!(&nums[..k as usize], &[1, 1, 2, 2, 3]);
+    }
+
+    #[test]
+    fn test_example_2() {
+        let mut nums = vec![0, 0, 1, 1, 1, 1, 2, 3, 3];
+        let k = Solution::remove_duplicates_ii(&mut nums);
+        assert_eq!(k, 7);
+        assert_eq!(&nums[..k as usize], &[0, 0, 1, 1, 2, 3, 3]);
     }
 }

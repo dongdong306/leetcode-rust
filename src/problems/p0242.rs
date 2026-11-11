@@ -43,3 +43,18 @@ impl Solution {
         true
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert!(Solution::is_anagram("anagram".to_string(), "nagaram".to_string()));
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert!(!Solution::is_anagram("rat".to_string(), "car".to_string()));
+    }
+}

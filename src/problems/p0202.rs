@@ -50,3 +50,18 @@ impl Solution {
         return if slow == 1 { true } else { false };
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert!(Solution::is_happy(19));
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert!(!Solution::is_happy(2));
+    }
+}

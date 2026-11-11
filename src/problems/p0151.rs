@@ -47,3 +47,32 @@ impl Solution {
         return word.join(" ");
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert_eq!(
+            Solution::reverse_words("the sky is blue".to_string()),
+            "blue is sky the"
+        );
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert_eq!(
+            Solution::reverse_words("  hello world  ".to_string()),
+            "world hello"
+        );
+    }
+
+    #[test]
+    fn test_example_3() {
+        assert_eq!(
+            Solution::reverse_words("a good   example".to_string()),
+            "example good a"
+        );
+    }
+}

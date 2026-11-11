@@ -51,3 +51,32 @@ impl Solution {
         return res
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert_eq!(
+            Solution::longest_common_prefix(vec![
+                "flower".to_string(),
+                "flow".to_string(),
+                "flight".to_string(),
+            ]),
+            "fl"
+        );
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert_eq!(
+            Solution::longest_common_prefix(vec![
+                "dog".to_string(),
+                "racecar".to_string(),
+                "car".to_string(),
+            ]),
+            ""
+        );
+    }
+}

@@ -50,3 +50,18 @@ impl Solution {
         return 0
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_example_1() {
+        assert_eq!(Solution::majority_element(vec![3, 2, 3]), 3);
+    }
+
+    #[test]
+    fn test_example_2() {
+        assert_eq!(Solution::majority_element(vec![2, 2, 1, 1, 1, 2, 2]), 2);
+    }
+}
